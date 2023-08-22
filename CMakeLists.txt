@@ -8,28 +8,11 @@ project (
 
 # Libraries
 
-# Moira 68k CPU simulator
-add_subdirectory(libs/moira)
-# Simple DirectMedia Layer graphics library (release-2.28.x branch)
-add_subdirectory(libs/SDL)
-include_directories(libs/SDL/include)
-# Dear ImGui library (docking branch + custom CMakeLists.txt)
-add_subdirectory(libs/imgui)
-include_directories(libs/imgui)
-include_directories(libs/imgui/backends)
+add_subdirectory("libs")
 
 # Main executable
 
-add_executable(
-    ${PROJECT_NAME}
-    src/main.cpp
-)
-
-
-# Link static libraries to main executable
-
-target_link_libraries(
-    ${PROJECT_NAME}
-    SDL2-static
-    imgui
-)
+add_executable(${PROJECT_NAME})
+target_sources(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/main.cpp)
+target_link_libraries(${PROJECT_NAME} SDL2-static imgui)
+set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
