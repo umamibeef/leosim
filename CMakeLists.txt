@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.22)
 
 project (
-    leosim
+    LeoSim
     VERSION 0.1
     DESCRIPTION "A simulator for the Léo homebrew computer"
     LANGUAGES CXX)
@@ -19,5 +19,5 @@ add_subdirectory("libs")
 
 add_executable(${PROJECT_NAME})
 target_sources(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/src/main.cpp)
-target_link_libraries(${PROJECT_NAME} SDL2-static imgui)
+target_link_libraries(${PROJECT_NAME} SDL2-static imgui moira)
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})

@@ -20,7 +20,7 @@
  *
  * Enable to improve accuracy, disable to gain speed.
  */
-#define PRECISE_TIMING false
+#define PRECISE_TIMING true
 
 /* Set to true to implement the CPU interface as virtual functions.
  *
@@ -42,7 +42,7 @@
  *
  * Enable to improve accuracy, disable to gain speed.
  */
-#define EMULATE_ADDRESS_ERROR false
+#define EMULATE_ADDRESS_ERROR true
 
 /* Set to true to emulate function code pins FC0 - FC2.
  *
@@ -81,7 +81,7 @@
  *
  * Disable to improve accuracy.
  */
-#define MIMIC_MUSASHI true
+#define MIMIC_MUSASHI false
 
 /* The following macro appears at the beginning of each instruction handler.
  * Moira will call 'willExecute(...)' for all listed instructions.

@@ -44,17 +44,11 @@ add_library(
         ${MOIRA_DIR}softfloat/softfloat.cpp
 )
 
-# Set the C++ standard for Moira (from libs/moira/CMakeLists.txt)
-set_target_properties(
+target_include_directories(
     moira
-    PROPERTIES
-        CMAKE_CXX_STANDARD 20
-        CMAKE_CXX_STANDARD_REQUIRED ON
-        CMAKE_CXX_EXTENSIONS OFF
+    PUBLIC ${MOIRA_DIR}
+    PUBLIC ${MOIRA_DIR}/softfloat
 )
-
-target_include_directories(moira PUBLIC ${MOIRA_DIR})
-target_include_directories(moira PUBLIC ${MOIRA_DIR}/softfloat)
 
 # The following compile options are from MOIRA_DIR/CMakeLists.txt
 if (NOT MSVC)

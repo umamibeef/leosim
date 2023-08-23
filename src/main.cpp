@@ -5,6 +5,8 @@
 #include <imgui_impl_sdl2.h>
 #include <iostream>
 
+#include <Moira.h>
+
 struct ProgramInstance {
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
@@ -72,7 +74,6 @@ int main(int argc, char** argv)
 
         /// ===== Draw your ImGui stuff here ====
         ImGui::ShowDemoWindow(&instance.showDemoWindow);
-
         ImGui::Render();
 
         SDL_RenderSetScale(instance.renderer, io.DisplayFramebufferScale.x, io.DisplayFramebufferScale.y);
